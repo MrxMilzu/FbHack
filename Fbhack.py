@@ -157,9 +157,7 @@ def menu():
 		time.sleep(1)
 		masuk()
 	except requests.exceptions.ConnectionError:
-		print"[!] Tidak ada koneksi"
-		keluar()
-def kentang():
+		keluar('tidak ada koneksi')
 	os.system("clear")
 	print logo
 	print 42*"\033[1;96m="
