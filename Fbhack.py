@@ -56,7 +56,7 @@ def jalan(z):
 		time.sleep(0.06)
 
 #########LOGO#########
-logo = """
+logo = '''
   /???    /???     / ??????    /?????????     /???  /???    \033[93m
  | ???   | ???    / ???/\???  \  ???\___/    | ??? /???     \033[93m
  | ???????????   / ???/__\???  \  ???\       | ???????      \033[93m
@@ -71,7 +71,7 @@ logo = """
    - Facebook   : https://www.facebook.com/Milzu-TC
    - YOUTUBE    :DarkKingMilzu
 ════════════════════════════════════════════════
-"""
+'''
 def tik():
 	titik = ['.   ','..  ','... ']
 	for o in titik:
@@ -92,12 +92,12 @@ idfromteman = []
 ######MASUK######
 def masuk():
 	os.system('clear')
-	print "logo"
-	print "\033[1;97m                                      "
-	print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
-	print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
-	print "\033[1;97m                                      "
-	pilih_masuk()
+	        print logo
+	        print "\033[1;97m                                      "
+	        print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
+	        print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
+	        print "\033[1;97m                                      "
+	        pilih_masuk()
 
 def pilih_masuk():
 	msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
