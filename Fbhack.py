@@ -154,7 +154,7 @@ def menu():
 	except IOError:
 		os.system('clear')
 		os.system('rm -rf login.txt')
-		masuk()
+		kentang()
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token=' +toket)
 		a = json.loads(otw.text)
@@ -169,6 +169,7 @@ def menu():
 	except requests.exceptions.ConnectionError:
 		print"[!] Tidak ada koneksi"
 		keluar()
+def kentang():
 	os.system("clear")
 	print logo
 	print 42*"\033[1;96m="
