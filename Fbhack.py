@@ -72,7 +72,6 @@ logo = """
    - YOUTUBE    :DarkKingMilzu
 ════════════════════════════════════════════════
 """
-
 def tik():
 	titik = ['.   ','..  ','... ']
 	for o in titik:
