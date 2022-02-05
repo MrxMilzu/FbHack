@@ -20,8 +20,6 @@ except ImportError:
 
 reload(sys)
 sys.setdefaultencoding('utf8')
-a = requests.get[('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
-
 
 def keluar():
 	print "[!] Exit"
