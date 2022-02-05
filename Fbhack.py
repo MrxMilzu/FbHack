@@ -299,7 +299,7 @@ def pilih_super():
 		for p in s['data']:
 			id.append(p['id'])
 	elif peak =="4":
-             os.system('clear')
+                os.system('clear')
 		print logo
 		print 42*"\033[1;96m="
 		try:
