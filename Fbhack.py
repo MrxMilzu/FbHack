@@ -16,7 +16,7 @@ except ImportError:
 try:
 	import requests
 except ImportError:
-               os.system("pip2 install requests")
+        os.system("pip2 install requests")
 
 reload(sys)
 sys.setdefaultencoding('utf8')
