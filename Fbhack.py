@@ -91,13 +91,13 @@ idfromteman = []
 
 ######MASUK######
 def masuk():
-	os.system('clear')
-	        print logo
-	        print "\033[1;97m                                      "
-	        print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
-	        print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
-	        print "\033[1;97m                                      "
-	        pilih_masuk()
+       os.system('clear')
+       print logo
+       print "\033[1;97m                                      "
+       print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
+       print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
+       print "\033[1;97m                                      "
+       pilih_masuk()
 
 def pilih_masuk():
 	msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
