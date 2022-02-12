@@ -121,7 +121,7 @@ def tokenz():
 		zedd = write(toket)
 		zedd = close()
 		jalan ('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
-		print '\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME'
+		print ('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
 		bot_komen()
 	except KeyError:
 		print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
