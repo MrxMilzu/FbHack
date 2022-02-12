@@ -111,7 +111,7 @@ def pilih_masuk():
 #####LOGIN_TOKENZ#####
 def tokenz():
 	os.system('clear')
-	print logo
+	print ('logo')
 	toket = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
