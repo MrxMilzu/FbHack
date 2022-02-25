@@ -752,6 +752,6 @@ def menu():
 	        raw_input("\n\033[1;96m[\033[1;97mKELUA TOOLS\033[1;96m]")
 	        menu()
 
-if __name__=='__main__':
-        menu()
-        masuk()
+        if __name__=='__main__':
+                menu()
+                masuk()
