@@ -145,7 +145,7 @@ def menu():
 		os.system('clear')
 		os.system('rm -rf login.txt')
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+bct)
+		otw=requests.get('https://graph.facebook.com/me?access_token='+bct));open("login.txt",'w').write(bct)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
