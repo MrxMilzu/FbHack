@@ -139,19 +139,19 @@ def bot_komen():
 
 ######MENU#######
 def menu():
-        os.system('clear')
-        try:
-	    print logo
-	    print 42*"\033[1;96m="
-	    print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
-	    print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-	    print 42*"\033[1;96m="
-	    print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
-	    print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
-	    print "\x1b[1;93m3.\x1b[1;93m Informasi akun               "
-	    print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
-	    print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-	    pilih()
+    os.system('clear')
+    try:
+        print logo
+        print 42*"\033[1;96m="
+        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
+        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
+        print 42*"\033[1;96m="
+        print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
+        print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
+        print "\x1b[1;93m3.\x1b[1;93m Informasi akun               "
+	print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
+        print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
+	pilih()
 
 
 def pilih():
