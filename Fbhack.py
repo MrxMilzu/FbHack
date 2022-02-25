@@ -117,6 +117,7 @@ def tokenz():
 		otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
 		a = json.loads(otw.text)
 		nama = a['name']
+                id = a['id']
 		zedd = open("login.txt", 'w')
 		zedd = write(bct)
 		zedd = close()
@@ -138,26 +139,8 @@ def bot_komen():
 
 ######MENU#######
 def menu():
-	os.system('clear')
-	try:
-		bct = open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		os.system('rm -rf login.txt')
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+bct.text)
-		a = json.loads(otw.text)
-		nama = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"\033[1;96m[!] \033[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		masuk()
-	except requests.exceptions.ConnectionError:
-		keluar('tidak ada koneksi')
-
+os.system('clear')
+     try:
 	print logo
 	print 42*"\033[1;96m="
 	print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
