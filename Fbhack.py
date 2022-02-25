@@ -114,7 +114,7 @@ def tokenz():
 	print ('logo')
 	bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+bct)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+bct))
 		a = json.loads(otw.text)
 		nama = a['name']
 		zedd = open("login.txt", 'w')
