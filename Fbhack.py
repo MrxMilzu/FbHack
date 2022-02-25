@@ -139,8 +139,8 @@ def bot_komen():
 
 ######MENU#######
 def menu():
-os.system('clear')
-     try:
+        os.system('clear')
+        try:
 	print logo
 	print 42*"\033[1;96m="
 	print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
