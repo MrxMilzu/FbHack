@@ -3,9 +3,9 @@
         #Jangan Di Recode Kentode Yang Recode anak Sial
 
         #Import module
-        import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
-        from multiprocessing.pool import ThreadPool
-        from datetime import datetime
+import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
+from multiprocessing.pool import ThreadPool
+from datetime import datetime
         try:
 	        import mechanize
         except ImportError:
