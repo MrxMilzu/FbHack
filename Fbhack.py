@@ -151,14 +151,10 @@ def menu():
         print "\x1b[1;93m3.\x1b[1;93m Informasi akun               "
 	print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
         print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-	pilih()
-
-
-def pilih():
 	unikers = raw_input("\n\033[1;97m >>> \033[1;97m")
 	if unikers =="":
 		print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
-		pilih()
+		menu()
 	elif unikers =="1":
 		super()
 	elif unikers =="2":
@@ -174,9 +170,6 @@ def pilih():
 		keluar()
 	else:
 		print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BENAR TOL[•]"
-		pilih()
-		
-		
 def super():
 	global bct
 	os.system('clear')
