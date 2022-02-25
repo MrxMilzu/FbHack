@@ -168,8 +168,7 @@ def menu():
 		jalan('LOADING MENGHAPUS TOKEN.....')
 		os.system('rm -rf login.txt')
 		keluar()
-	else:
-		print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BENAR TOL[•]"
+
 def super():
 	global bct
 	os.system('clear')
