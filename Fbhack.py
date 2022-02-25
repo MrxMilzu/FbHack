@@ -112,13 +112,13 @@ def pilih_masuk():
 def tokenz():
 	os.system('clear')
 	print ('logo')
-	toket = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
+	Sleep = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+Sleep)
 		a = json.loads(otw.text)
 		nama = a['name']
 		zedd = open("login.txt", 'w')
-		zedd = write(toket)
+		zedd = write(Sleep)
 		zedd = close()
 		jalan ('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
 		print ('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
@@ -130,7 +130,7 @@ def tokenz():
 ######BOT KOMEN#######
 def bot_komen():
 	try:
-		toket=open('login.txt','r').read()
+		Sleep=open('login.txt','r').read()
 	except IOError:
 		print"\033[1;39m[!] Token invalid"
 		os.system('rm -rf login.txt')
