@@ -1,89 +1,89 @@
-#!/usr/bin/python2
-# coding=utf-8
+        #!/usr/bin/python2
+        # coding=utf-8
+        #Jangan Di Recode Kentode Yang Recode anak Sial
+        #Import module
+        import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
+        from multiprocessing.pool import ThreadPool
+        from datetime import datetime
+        try:
+	        import mechanize
+        except ImportError:
+	        os.system("pip2 install mechanize")
+        try:
+        	import bs4
+        except ImportError:
+	        os.system("pip2 install bs4")
+        try:
+	        import requests
+        except ImportError:
+                os.system("pip2 install requests")
 
-#Import module
-import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
-from multiprocessing.pool import ThreadPool
-from datetime import datetime
-try:
-	import mechanize
-except ImportError:
-	os.system("pip2 install mechanize")
-try:
-	import bs4
-except ImportError:
-	os.system("pip2 install bs4")
-try:
-	import requests
-except ImportError:
-        os.system("pip2 install requests")
+        reload(sys)
+        sys.setdefaultencoding('utf8')
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-def keluar():
-	print "[!] Exit"
-	os.sys.exit()
+        def keluar():
+	        print "[!] Exit"
+	        os.sys.exit()
 	
 	
-def acak(x):
-    w = 'mhkbpcP'
-    d = ''
-    for i in x:
-        d += '!'+w[random.randint(0,len(w)-1)]+i
-    return cetak(d)
+        def acak(x):
+            w = 'mhkbpcP'
+            d = ''
+            for i in x:
+                d += '!'+w[random.randint(0,len(w)-1)]+i
+            return cetak(d)
     
     
-def cetak(x):
-    w = 'mhkbpcP'
-    for i in w:
-        j = w.index(i)
-        x= x.replace('!%s'%i,'%s;'%str(31+j))
-    x += ''
-    x = x.replace('!0','')
-    sys.stdout.write(x+'\n')
+        def cetak(x):
+            w = 'mhkbpcP'
+            for i in w:
+                j = w.index(i)
+                x= x.replace('!%s'%i,'%s;'%str(31+j))
+            x += ''
+            x = x.replace('!0','')
+            sys.stdout.write(x+'\n')
 
 
-def jalan(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.06)
+        def jalan(z):
+	        for e in z + '\n':
+		        sys.stdout.write(e)
+		        sys.stdout.flush()
+		        time.sleep(0.06)
 
 #########LOGO#########
-logo = '''
-\033[91m
-  /???    /???     / ??????    /?????????     /???  /???    \033[93m
- | ???   | ???    / ???/\???  \  ???\___/    | ??? /???     \033[93m
- | ???????????   / ???/__\???  \  ???\       | ???????      \033[93m
- | ???????????  / ????????????  \  ???\      | ?????????    \033[93m
- | ???/__/ ??? / ??? ______ ???  \  ???\     | ??? __ ???   \033[93m
- | ???   | ???/ ???/       \ ???  \  ????????| ???|  \ ???  \033[91m
- |___/   |___//___/        /___/   \/_______/|/___/   \___\
-\033[92m
-═══════════════════════════════════════════════════════════════
-   - Author     :DarkKingMilzu
-   - Cyber      :Team [MBF]
-   - WhatsApp   : 085264641929
-   - Facebook   : https://www.facebook.com/Milzu-TC
-   - YOUTUBE    :DarkKingMilzu
-═══════════════════════════════════════════════════════════════'''
-def tik():
-	titik = ['.   ','..  ','... ']
-	for o in titik:
-		print("\r\033[1;97m[\033[1;93m●\033[1;97m]\033[1;93m Sedang Masuk\033[1;97m "+o),;sys.stdout.flush();time.sleep(1)
+        logo = '''
+        \033[91m
+          /???    /???     / ??????    /?????????     /???  /???    \033[93m
+         | ???   | ???    / ???/\???  \  ???\___/    | ??? /???     \033[93m
+         | ???????????   / ???/__\???  \  ???\       | ???????      \033[93m
+         | ???????????  / ????????????  \  ???\      | ?????????    \033[93m
+         | ???/__/ ??? / ??? ______ ???  \  ???\     | ??? __ ???   \033[93m
+         | ???   | ???/ ???/       \ ???  \  ????????| ???|  \ ???  \033[91m
+         |___/   |___//___/        /___/   \/_______/|/___/   \___\
+        \033[92m
+        ═══════════════════════════════════════════════════════════════
+           - Author     :DarkKingMilzu
+           - Cyber      :Team [MBF]
+           - WhatsApp   : 085264641929
+           - Facebook   : https://www.facebook.com/Milzu-TC
+           - YOUTUBE    :DarkKingMilzu
+        ═══════════════════════════════════════════════════════════════'''
+        def tik():
+	        titik = ['.   ','..  ','... ']
+	        for o in titik:
+		        print("\r\033[1;97m[\033[1;93m●\033[1;97m]\033[1;93m Sedang Masuk\033[1;97m "+o),;sys.stdout.flush();time.sleep(1)
 
-back = 0
-threads = []
-berhasil = []
-cekpoint = []
-oks = []
-oke = []
-cpe = []
-id = []
-username = []
-idteman = []
-idfromteman = []
+        back = 0
+        threads = []
+        berhasil = []
+        cekpoint = []
+        oks = []
+        oke = []
+        cpe = []
+        id = []
+        username = []
+        idteman = []
+        idfromteman = []
 
 ######MASUK######
         def masuk():
