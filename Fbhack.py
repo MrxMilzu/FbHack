@@ -95,79 +95,79 @@ def masuk():
        print "\033[1;97m                                      "
        pilih_masuk()
 
-def pilih_masuk():
-	msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
-	if msuk =="":
-		print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
-		pilih_masuk()
-	elif msuk =="1" or  msuk =="01":
-		tokenz()
-	elif msuk =="0" or  msuk =="00":
-		keluar()
-	else:
-		print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
-		pilih_masuk()
+        def pilih_masuk():
+	        msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
+	        if msuk =="":
+		        print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
+		        pilih_masuk()
+	        elif msuk =="1" or  msuk =="01":
+		        tokenz()
+	        elif msuk =="0" or  msuk =="00":
+		        keluar()
+	        else:
+		        print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
+		        pilih_masuk()
 		
 #####LOGIN_TOKENZ#####
-def tokenz():
-	os.system('clear')
-	print ('logo')
-	bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
-		a = json.loads(otw.text)
-		nama = a['name']
-                id = a['id']
-		zedd = open("login.txt", 'w')
-		zedd = write(bct)
-		zedd = close()
-		jalan('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
-		print('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
-		bot_komen()
-	except KeyError:
-		print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
-		time.sleep(1)
-		masuk()
+        def tokenz():
+	        os.system('clear')
+	        print ('logo')
+	        bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
+	        try:
+		        otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
+		        a = json.loads(otw.text)
+		        nama = a['name']
+                        id = a['id']
+		        zedd = open("login.txt", 'w')
+		        zedd = write(bct)
+		        zedd = close()
+		        jalan('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
+		        print('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
+		        bot_komen()
+	        except KeyError:
+		        print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
+		        time.sleep(1)
+		        masuk()
 ######BOT KOMEN#######
-def bot_komen():
-	try:
-		bct=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;39m[!] Token invalid"
-		os.system('rm -rf login.txt')
-	menu()
+        def bot_komen():
+	        try:
+		        bct=open('login.txt','r').read()
+	        except IOError:
+	        	print"\033[1;39m[!] Token invalid"
+		        os.system('rm -rf login.txt')
+	        menu()
 
 ######MENU#######
-def menu():
-    os.system('clear')
-    try:
-        print logo
-        print 42*"\033[1;96m="
-        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
-        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-        print 42*"\033[1;96m="
-        print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
-        print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
-        print "\x1b[1;93m3.\x1b[1;93m Informasi akun               "
-	print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
-        print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-	tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if tolol =="":
-		print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
-		menu()
-	elif tolol =="1":
-		super()
-	elif tolol =="2":
-		grupsaya()
-	elif tolol =="3":
-		informasi()
-	elif tolol =="4":
-		yahoo()
-	elif tolol =="0":
-		os.system('clear')
-		jalan('LOADING MENGHAPUS TOKEN.....')
-		os.system('rm -rf login.txt')
-		keluar()
+        def menu():
+            os.system('clear')
+            try:
+                print logo
+                print 42*"\033[1;96m="
+                print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
+                print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
+                print 42*"\033[1;96m="
+                print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
+                print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
+                print "\x1b[1;93m3.\x1b[1;93m Informasi akun                "
+                print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
+                print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
+	        tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
+	        if tolol =="":
+		        print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
+		        menu()
+	        elif tolol =="1":
+		        super()
+	        elif tolol =="2":
+		        grupsaya()
+	        elif tolol =="3":
+		        informasi()
+	        elif tolol =="4":
+		        yahoo()
+	        elif tolol =="0":
+		        os.system('clear')
+		        jalan('LOADING MENGHAPUS TOKEN.....')
+		        os.system('rm -rf login.txt')
+		        keluar()
 
         def super():
             global bct
