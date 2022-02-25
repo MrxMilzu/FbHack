@@ -112,7 +112,7 @@ def pilih_masuk():
 def tokenz():
 	os.system('clear')
 	print ('logo')
-	bct=raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
+	bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
 		a = json.loads(otw.text)
@@ -120,8 +120,8 @@ def tokenz():
 		zedd = open("login.txt", 'w')
 		zedd = write(bct)
 		zedd = close()
-		jalan ('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
-		print ('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
+		jalan('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
+		print('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
 		bot_komen()
 	except KeyError:
 		print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
@@ -140,12 +140,12 @@ def bot_komen():
 def menu():
 	os.system('clear')
 	try:
-		bct=open('login.txt','r').read()
+		bct = open('login.txt','r').read()
 	except IOError:
 		os.system('clear')
 		os.system('rm -rf login.txt')
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+bct)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+bct.text)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
@@ -157,7 +157,7 @@ def menu():
 		masuk()
 	except requests.exceptions.ConnectionError:
 		keluar('tidak ada koneksi')
-	os.system("clear")
+
 	print logo
 	print 42*"\033[1;96m="
 	print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
