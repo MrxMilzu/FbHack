@@ -504,7 +504,6 @@ def menu():
                                         print '\033[1;96m[?] \033[1;93mTanggal lahir\033[1;97m : \033[1;91mTidak ada'
 		        	try:
 				        print '\033[1;96m[♪] \033[1;93mSekolah\033[1;97m       : '
-				        for q in z['education']:
 		                try:
 			                print '\033[1;91m                   ~ \033[1;97m'+q['school']['name']
 				except KeyError:
