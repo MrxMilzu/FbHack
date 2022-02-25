@@ -151,34 +151,33 @@ def menu():
         print "\x1b[1;93m3.\x1b[1;93m Informasi akun               "
 	print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
         print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-	unikers = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if unikers =="":
+	tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
+	if tolol =="":
 		print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
 		menu()
-	elif unikers =="1":
+	elif tolol =="1":
 		super()
-	elif unikers =="2":
+	elif tolol =="2":
 		grupsaya()
-	elif unikers =="3":
+	elif tolol =="3":
 		informasi()
-	elif unikers =="4":
+	elif tolol =="4":
 		yahoo()
-	elif unikers =="0":
+	elif tolol =="0":
 		os.system('clear')
 		jalan('LOADING MENGHAPUS TOKEN.....')
 		os.system('rm -rf login.txt')
 		keluar()
 
 def super():
-	global bct
-	os.system('clear')
-	try:
-		bct=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;96m[!] \x1b[1;91mTOKEN NOT FOUND"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		keluar()
+    global bct
+    try:
+        bct=open('login.txt','w').read()
+    except IOError:
+        print"\033[1;96m[!] \x1b[1;91mTOKEN NOT FOUND"
+	os.system('rm -rf login.txt')
+	time.sleep(1)
+	keluar()
 	os.system('clear')
 	print logo
 	print 42*"\033[1;96m="
