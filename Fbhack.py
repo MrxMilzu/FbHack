@@ -626,7 +626,7 @@ def menu():
 		        keluar()
 	        try:
 		        os.mkdir('out')
-	                except OSError:
+	        except OSError:
 		        pass
 	        os.system('clear')
 	        print logo
