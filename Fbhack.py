@@ -1,23 +1,23 @@
-        #!/usr/bin/python2
-        # coding=utf-8
-        #Jangan Di Recode Kentode Yang Recode anak Sial
+#!/usr/bin/python2
+# coding=utf-8
+#Jangan Di Recode Kentode Yang Recode anak Sial
 
-        #Import module
+#Import module
 import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
 from multiprocessing.pool import ThreadPool
 from datetime import datetime
-        try:
-	        import mechanize
-        except ImportError:
-	        os.system("pip2 install mechanize")
-        try:
-        	import bs4
-        except ImportError:
-	        os.system("pip2 install bs4")
-        try:
-	        import requests
-        except ImportError:
-                os.system("pip2 install requests")
+try:
+	import mechanize
+except ImportError:
+	os.system("pip2 install mechanize")
+try:
+        import bs4
+except ImportError:
+	os.system("pip2 install bs4")
+try:
+        import requests
+except ImportError:
+        os.system("pip2 install requests")
 
         reload(sys)
         sys.setdefaultencoding('utf8')
