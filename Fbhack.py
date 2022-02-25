@@ -406,111 +406,119 @@ def menu():
 	super()
 
 
-def grupsaya():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;96m[!] \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		keluar()
-	try:
-		os.mkdir('out')
-	except OSError:
-		pass
-	os.system('clear')
-	print logo
-	print 42*"\033[1;96m="
-	try:
-		uh = requests.get('https://graph.facebook.com/me/groups?access_token='+bct)
-		gud = json.loads(uh.text)
-		for p in gud['data']:
-			nama = p["name"]
-			id = p["id"]
-			bct=open('out/Grupid.txt','w')
-			listgrup.append(id)
-			f.write(id + '\n')
-			print("\033[1;96m[✓] \033[1;92mGROUP SAYA")
-			print("\033[1;96m[♪] \033[1;97mID  \033[1;91m: \033[1;92m"+str(id))
-			print("\033[1;96m[♪] \033[1;97mNama\033[1;91m: \033[1;92m"+str(nama) + '\n')
-		print 42*"\033[1;96m="
-		print"\033[1;96m[+] \033[1;92mTotal Group \033[1;91m:\033[1;97m %s"%(len(listgrup))
-		print("\033[1;96m[+] \033[1;92mTersimpan \033[1;91m: \033[1;97mout/Grupid.txt")
-		f.close()
-		raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-		menu()
-	except (KeyboardInterrupt,EOFError):
-		print("\033[1;96m[!] \x1b[1;91mTerhenti")
-		raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-		menu()
-	except KeyError:
-		os.remove('out/Grupid.txt')
-		print('\033[1;96m[!] \x1b[1;91mGroup tidak ditemukan')
-		raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-		menu()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;96m[✖] \x1b[1;91mTidak ada koneksi"
-		keluar()
-	except IOError:
-		print "\033[1;96m[!] \x1b[1;91mError"
-		raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-		menu()
+        def grupsaya():
+	        os.system('clear')
+	        try:
+		        bct=open('login.txt','r').read()
+	        except IOError:
+		        print"\033[1;96m[!] \x1b[1;91mToken invalid"
+		        os.system('rm -rf login.txt')
+		        time.sleep(1)
+		        keluar()
+	        try:
+		        os.mkdir('out')
+	        except OSError:
+		        pass
+	        os.system('clear')
+	        print logo
+	        print 42*"\033[1;96m="
+	        try:
+		        uh = requests.get('https://graph.facebook.com/me/groups?access_token='+bct)
+		        gud = json.loads(uh.text)
+		        for p in gud['data']:
+			        nama = p["name"]
+			        id = p["id"]
+		         	bct=open('out/Grupid.txt','w')
+		        	listgrup.append(id)
+			        f.write(id + '\n')
+			        print("\033[1;96m[✓] \033[1;92mGROUP SAYA")
+			        print("\033[1;96m[♪] \033[1;97mID  \033[1;91m: \033[1;92m"+str(id))
+			        print("\033[1;96m[♪] \033[1;97mNama\033[1;91m: \033[1;92m"+str(nama) + '\n')
+		        print 42*"\033[1;96m="
+		        print"\033[1;96m[+] \033[1;92mTotal Group \033[1;91m:\033[1;97m %s"%(len(listgrup))
+		        print("\033[1;96m[+] \033[1;92mTersimpan \033[1;91m: \033[1;97mout/Grupid.txt")
+		        f.close()
+		        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+		        menu()
+	        except (KeyboardInterrupt,EOFError):
+		        print("\033[1;96m[!] \x1b[1;91mTerhenti")
+		        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+		        menu()
+	        except KeyError:
+		        os.remove('out/Grupid.txt')
+		        print('\033[1;96m[!] \x1b[1;91mGroup tidak ditemukan')
+		        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+		        menu()
+	        except requests.exceptions.ConnectionError:
+		        print"\033[1;96m[✖] \x1b[1;91mTidak ada koneksi"
+		        keluar()
+	        except IOError:
+		        print "\033[1;96m[!] \x1b[1;91mError"
+		        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+		        menu()
 
-def informasi():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;91m[!] Token invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		keluar()
-	os.system('clear')
-	print logo
-	print 42*"\033[1;96m="
-	aid = raw_input('\033[1;96m[+] \033[1;93mMasukan ID/Nama\033[1;91m : \033[1;97m')
-	jalan('\033[1;96m[•] \033[1;93mTunggu sebentar \033[1;97m...')
-	r = requests.get('https://graph.facebook.com/me/friends?access_token='+bct)
-	cok = json.loads(r.text)
-	for i in cok['data']:
-		if aid in i['name'] or aid in i['id']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+bct)
-			z = json.loads(x.text)
-			print 43*"\033[1;96m="
-			try:
-				print '\033[1;96m[♪] \033[1;93mNama\033[1;97m          : '+z['name']
-			except KeyError: print '\033[1;96m[?] \033[1;93mNama\033[1;97m          : \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mID\033[1;97m            : '+z['id']
-			except KeyError: print '\033[1;96m[?] \033[1;93mID\033[1;97m            : \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mEmail\033[1;97m         : '+z['email']
-			except KeyError: print '\033[1;96m[?] \033[1;93mEmail\033[1;97m         : \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mNo HP\033[1;97m         : '+z['mobile_phone']
-			except KeyError: print '\033[1;96m[?] \033[1;93mNo HP\033[1;97m         : \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mTempat tinggal\033[1;97m: '+z['location']['name']
-			except KeyError: print '\033[1;96m[?] \033[1;93mTempat tinggal\033[1;97m: \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mTanggal lahir\033[1;97m : '+z['birthday']
-			except KeyError: print '\033[1;96m[?] \033[1;93mTanggal lahir\033[1;97m : \033[1;91mTidak ada'
-			try:
-				print '\033[1;96m[♪] \033[1;93mSekolah\033[1;97m       : '
-				for q in z['education']:
-					try:
-						print '\033[1;91m                   ~ \033[1;97m'+q['school']['name']
-					except KeyError: print '\033[1;91m                   ~ \033[1;91mTidak ada'
-			except KeyError: pass
-			raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-			menu()
-		else:
-			pass
-	else:
-		print"\033[1;96m[✖] \x1b[1;91mAkun tidak ditemukan"
-		raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
-		menu()
+        def informasi():
+	        os.system('clear')
+	        try:
+		        bct=open('login.txt','r').read()
+	        except IOError:
+		        print"\033[1;91m[!] Token invalid"
+		        os.system('rm -rf login.txt')
+		        time.sleep(1)
+		        keluar()
+	        os.system('clear')
+	        print logo
+	        print 42*"\033[1;96m="
+	        aid = raw_input('\033[1;96m[+] \033[1;93mMasukan ID/Nama\033[1;91m : \033[1;97m')
+	        jalan('\033[1;96m[•] \033[1;93mTunggu sebentar \033[1;97m...')
+	        r = requests.get('https://graph.facebook.com/me/friends?access_token='+bct)
+	        cok = json.loads(r.text)
+        	for i in cok['data']:
+		        if aid in i['name'] or aid in i['id']:
+			        x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+bct)
+			        z = json.loads(x.text)
+			        print 43*"\033[1;96m="
+			        try:
+				        print '\033[1;96m[♪] \033[1;93mNama\033[1;97m          : '+z['name']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mNama\033[1;97m          : \033[1;91mTidak ada'
+			        try:
+				        print '\033[1;96m[♪] \033[1;93mID\033[1;97m            : '+z['id']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mID\033[1;97m            : \033[1;91mTidak ada'
+			        try:
+				        print '\033[1;96m[♪] \033[1;93mEmail\033[1;97m         : '+z['email']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mEmail\033[1;97m         : \033[1;91mTidak ada'
+			        try:
+				        print '\033[1;96m[♪] \033[1;93mNo HP\033[1;97m         : '+z['mobile_phone']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mNo HP\033[1;97m         : \033[1;91mTidak ada'
+			        try:
+				        print '\033[1;96m[♪] \033[1;93mTempat tinggal\033[1;97m: '+z['location']['name']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mTempat tinggal\033[1;97m: \033[1;91mTidak ada'
+		           	try:
+				        print '\033[1;96m[♪] \033[1;93mTanggal lahir\033[1;97m : '+z['birthday']
+			        except KeyError:
+                                        print '\033[1;96m[?] \033[1;93mTanggal lahir\033[1;97m : \033[1;91mTidak ada'
+		        	try:
+				        print '\033[1;96m[♪] \033[1;93mSekolah\033[1;97m       : '
+				        for q in z['education']:
+		                try:
+			                print '\033[1;91m                   ~ \033[1;97m'+q['school']['name']
+				except KeyError:
+                                        print '\033[1;91m                   ~ \033[1;91mTidak ada'
+			        except KeyError:
+                                        pass
+			        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+			        menu()
+		        else:
+			        pass
+	        else:
+		        print"\033[1;96m[✖] \x1b[1;91mAkun tidak ditemukan"
+		        raw_input("\n\033[1;96m[\033[1;97mKembali\033[1;96m]")
+		        menu()
 def yahoo():
 	global bct
 	os.system('clear')
