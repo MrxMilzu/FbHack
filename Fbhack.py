@@ -7,136 +7,136 @@ import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cook
 from multiprocessing.pool import ThreadPool
 from datetime import datetime
 try:
-	import mechanize
+import mechanize
 except ImportError:
-	os.system("pip2 install mechanize")
+os.system("pip2 install mechanize")
 try:
-        import bs4
+import bs4
 except ImportError:
-	os.system("pip2 install bs4")
+os.system("pip2 install bs4")
 try:
-        import requests
+import requests
 except ImportError:
-        os.system("pip2 install requests")
+os.system("pip2 install requests")
 
-        reload(sys)
-        sys.setdefaultencoding('utf8')
+reload(sys)
+sys.setdefaultencoding('utf8')
 
-        def keluar():
-	        print "[!] Exit"
-	        os.sys.exit()
+def keluar():
+    print "[!] Exit"
+    os.sys.exit()
 	
 	
-        def acak(x):
-            w = 'mhkbpcP'
-            d = ''
-            for i in x:
-                d += '!'+w[random.randint(0,len(w)-1)]+i
-            return cetak(d)
+def acak(x):
+    w = 'mhkbpcP'
+    d = ''
+    for i in x:
+        d += '!'+w[random.randint(0,len(w)-1)]+i
+    return cetak(d)
     
     
-        def cetak(x):
-            w = 'mhkbpcP'
-            for i in w:
-                j = w.index(i)
-                x= x.replace('!%s'%i,'%s;'%str(31+j))
-            x += ''
-            x = x.replace('!0','')
-            sys.stdout.write(x+'\n')
+def cetak(x):
+    w = 'mhkbpcP'
+    for i in w:
+        j = w.index(i)
+        x= x.replace('!%s'%i,'%s;'%str(31+j))
+    x += ''
+    x = x.replace('!0','')
+    sys.stdout.write(x+'\n')
 
 
-        def jalan(z):
-	        for e in z + '\n':
-		        sys.stdout.write(e)
-		        sys.stdout.flush()
-		        time.sleep(0.06)
+def jalan(z):
+        for e in z + '\n':
+		sys.stdout.write(e)
+	        sys.stdout.flush()
+	        time.sleep(0.06)
 
 #########LOGO#########
-        logo = '''
-        \033[91m
-          /???    /???     / ??????    /?????????     /???  /???    \033[93m
-         | ???   | ???    / ???/\???  \  ???\___/    | ??? /???     \033[93m
-         | ???????????   / ???/__\???  \  ???\       | ???????      \033[93m
-         | ???????????  / ????????????  \  ???\      | ?????????    \033[93m
-         | ???/__/ ??? / ??? ______ ???  \  ???\     | ??? __ ???   \033[93m
-         | ???   | ???/ ???/       \ ???  \  ????????| ???|  \ ???  \033[91m
-         |___/   |___//___/        /___/   \/_______/|/___/   \___\
-        \033[92m
-        ═══════════════════════════════════════════════════════════════
+logo = '''
+\033[91m
+/???    /???     / ??????    /?????????     /???  /???    \033[93m
+| ???   | ???    / ???/\???  \  ???\___/    | ??? /???     \033[93m
+| ???????????   / ???/__\???  \  ???\       | ???????      \033[93m
+| ???????????  / ????????????  \  ???\      | ?????????    \033[93m
+| ???/__/ ??? / ??? ______ ???  \  ???\     | ??? __ ???   \033[93m
+| ???   | ???/ ???/       \ ???  \  ????????| ???|  \ ???  \033[91m
+|___/   |___//___/        /___/   \/_______/|/___/   \___\
+\033[92m
+═══════════════════════════════════════════════════════════════
            - Author     :DarkKingMilzu
            - Cyber      :Team [MBF]
            - WhatsApp   : 085264641929
            - Facebook   : https://www.facebook.com/Milzu-TC
            - YOUTUBE    :DarkKingMilzu
-        ═══════════════════════════════════════════════════════════════'''
-        def tik():
-	        titik = ['.   ','..  ','... ']
-	        for o in titik:
-		        print("\r\033[1;97m[\033[1;93m●\033[1;97m]\033[1;93m Sedang Masuk\033[1;97m "+o),;sys.stdout.flush();time.sleep(1)
+═══════════════════════════════════════════════════════════════'''
+def tik():
+	titik = ['.   ','..  ','... ']
+	for o in titik:
+	         print("\r\033[1;97m[\033[1;93m●\033[1;97m]\033[1;93m Sedang Masuk\033[1;97m "+o),;sys.stdout.flush();time.sleep(1)
 
-        back = 0
-        threads = []
-        berhasil = []
-        cekpoint = []
-        oks = []
-        oke = []
-        cpe = []
-        id = []
-        username = []
-        idteman = []
-        idfromteman = []
+back = 0
+threads = []
+berhasil = []
+cekpoint = []
+oks = []
+oke = []
+cpe = []
+id = []
+username = []
+idteman = []
+idfromteman = []
 
 ######MASUK######
-        def masuk():
-               os.system('clear')
-               print logo
-               print "\033[1;97m                                      "
-               print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
-               print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
-               print "\033[1;97m                                      "
-               pilih_masuk()
+def masuk():
+        os.system('clear')
+        print logo
+        print "\033[1;97m                                      "
+        print "\033[1;97m  [\033[1;97m01\033[1;97m]\033[1;96m\033[1;97mLogin Menggunakan Token"
+        print "\033[1;97m  [\033[1;91m00\033[1;97m]\033[1;96m\033[1;97m[> Exit/Out"
+        print "\033[1;97m                                      "
+        pilih_masuk()
 
-        def pilih_masuk():
-	        msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
-	        if msuk =="":
-		        print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
-		        pilih_masuk()
-	        elif msuk =="1" or  msuk =="01":
-		        tokenz()
-	        elif msuk =="0" or  msuk =="00":
-		        keluar()
-	        else:
-		        print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
-		        pilih_masuk()
+def pilih_masuk():
+        msuk = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m ")
+        if msuk =="":
+		print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
+	        pilih_masuk()
+	elif msuk =="1" or  msuk =="01":
+	        tokenz()
+        elif msuk =="0" or  msuk =="00":
+		keluar()
+	else:
+		print"\033[1;97m[\033[1;91m!\033[1;97m] Harap Isi Dengan Benar !"
+		pilih_masuk()
 		
 #####LOGIN_TOKENZ#####
-        def tokenz():
-	        os.system('clear')
-	        print ('logo')
-	        bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
-	        try:
-		        otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
-		        a = json.loads(otw.text)
-		        nama = a['name']
-                        id = a['id']
-		        zedd = open("login.txt", 'w')
-		        zedd = write(bct)
-		        zedd = close()
-		        jalan('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
-		        print('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
-		        bot_komen()
-	        except KeyError:
-		        print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
-		        time.sleep(1)
-		        masuk()
+def tokenz():
+        os.system('clear')
+        print ('logo')
+	bct = raw_input("\033[1;97m[\033[1;39m?\033[1;97m] \33[31;1mToken : \33[31;1m")
+        try:
+		otw = requests.get('https://graph.facebook.com/me?access_token='+(bct));open("login.txt",'w').write(bct)
+		a = json.loads(otw.text)
+	        nama = a['name']
+                id = a['id']
+	        zedd = open("login.txt", 'w')
+	        zedd = write(bct)
+	        zedd = close()
+		jalan('\033[1;97m>PAKAI SC YANG BENER YA ADIK² ')
+		print('\033[1;97m[\033[1;39m>\033[1;97m]\033[1;39m WELLCOME')
+	        bot_komen()
+	except KeyError:
+		print "\033[1;97m[\033[1;39m!\033[1;97m] \033[1;39mToken Salah !"
+	        time.sleep(1)
+		masuk()
 ######BOT KOMEN#######
-        def bot_komen():
-	        try:
-		        bct=open('login.txt','r').read()
-	        except IOError:
-	        	print"\033[1;39m[!] Token invalid"
-		        os.system('rm -rf login.txt')
-	                menu()
+def bot_komen():
+        try:
+	        bct=open('login.txt','r').read()
+        except IOError:
+	        print"\033[1;39m[!] Token invalid"
+	        os.system('rm -rf login.txt')
+	        menu()
 
 ######MENU#######
         def menu():
