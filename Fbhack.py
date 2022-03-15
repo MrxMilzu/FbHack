@@ -1,23 +1,27 @@
 #!/usr/bin/python2
 # coding=utf-8
-#Jangan Di Recode Kentode Yang Recode anak Sial
+#Jangan Di Recode Tolol !!!
+#Nomoer HP Orang L3G3N5: +6285264641929
 
 #Import module
 import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
 from multiprocessing.pool import ThreadPool
 from datetime import datetime
 try:
-import mechanize
+    import mechanize
 except ImportError:
-os.system("pip2 install mechanize")
+    print'Install Dulu Kontol [!]'
+    os.system("pip2 install mechanize")
 try:
-import bs4
+    import bs4
 except ImportError:
-os.system("pip2 install bs4")
+    print'Install Dulu Tolol [!]'
+    os.system("pip2 install bs4")
 try:
-import requests
+    import requests
 except ImportError:
-os.system("pip2 install requests")
+    print'Yang Buat 0rang Ganteng [!]'
+    os.system("pip2 install requests")
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -139,36 +143,36 @@ def bot_komen():
 	        menu()
 
 ######MENU#######
-        def menu():
-            os.system('clear')
-            try:
-                print logo
-                print 42*"\033[1;96m="
-                print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
-                print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-                print 42*"\033[1;96m="
-                print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
-                print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
-                print "\x1b[1;93m3.\x1b[1;93m Informasi akun                "
-                print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
-                print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-	        tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
-	        if tolol =="":
-		        print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
-		        menu()
-	        elif tolol =="1":
-		        super()
-	        elif tolol =="2":
-		        grupsaya()
-	        elif tolol =="3":
-		        informasi()
-	        elif tolol =="4":
-		        yahoo()
-	        elif tolol =="0":
-		        os.system('clear')
-		        jalan('LOADING MENGHAPUS TOKEN.....')
-		        os.system('rm -rf login.txt')
-		        keluar()
+def menu():
+    os.system('clear')
+    try:
+        print logo
+        print 42*"\033[1;96m="
+        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
+        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
+        print 42*"\033[1;96m="
+        print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
+        print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
+        print "\x1b[1;93m3.\x1b[1;93m Informasi akun                "
+        print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
+        print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
+        tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
+        if tolol =="":
+	        print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
+	        menu()
+	elif tolol =="1":
+		super()
+	elif tolol =="2":
+	        grupsaya()
+        elif tolol =="3":
+	        informasi()
+	elif tolol =="4":
+	        yahoo()
+        elif tolol =="0":
+	        os.system('clear')
+	        jalan('Hapus Token.....')
+	        os.system('rm -rf login.txt')
+	        keluar()
 
         def super():
             global bct
