@@ -144,54 +144,54 @@ def bot_komen():
 
 ######MENU#######
 def menu():
-    os.system('clear')
-    try:
-        print logo
-        print 42*"\033[1;96m="
-        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
-        print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-        print 42*"\033[1;96m="
-        print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
-        print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
-        print "\x1b[1;93m3.\x1b[1;93m Informasi akun                "
-        print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
-        print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
-        tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
-        if tolol =="":
-	        print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
-	        menu()
-	elif tolol =="1":
-		super()
-	elif tolol =="2":
-	        grupsaya()
-        elif tolol =="3":
-	        informasi()
-	elif tolol =="4":
-	        yahoo()
-        elif tolol =="0":
-	        os.system('clear')
-	        jalan('Hapus Token.....')
-	        os.system('rm -rf login.txt')
-	        keluar()
+        os.system('clear')
+        try:
+            print logo
+            print 42*"\033[1;96m="
+            print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
+            print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
+            print 42*"\033[1;96m="
+            print "\x1b[1;93m1.\x1b[1;93m Hack facebook MBF"
+            print "\x1b[1;93m2.\x1b[1;93m Lihat daftar grup               "
+            print "\x1b[1;93m3.\x1b[1;93m Informasi akun                "
+            print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
+            print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
+            tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
+            if tolol =="":
+	            print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
+	            menu()
+	    elif tolol =="1":
+	  	    super()
+	    elif tolol =="2":
+	            grupsaya()
+            elif tolol =="3":
+	            informasi()
+	    elif tolol =="4":
+	            yahoo()
+            elif tolol =="0":
+	            os.system('clear')
+	            jalan('Hapus Token.....')
+	            os.system('rm -rf login.txt')
+	            keluar()
 
 def super():
-    global bct
-    try:
-        bct=open('login.txt','w').read()
-    except IOError:
-        print"\033[1;96m[!] \x1b[1;91mTOKEN NOT FOUND"
-        os.system('rm -rf login.txt')
-	time.sleep(1)
-        keluar()
-	os.system('clear')
-	print logo
-        print 42*"\033[1;96m="
-        print "\x1b[1;97m1.\x1b[1;93m AMBIL DARI DAFTAR TEMAN"
-        print "\x1b[1;97m2.\x1b[1;93m AMBIL DARI ID PUBLIK"
-	print "\x1b[1;97m3.\x1b[1;93m AMBIL DARI GRUP"
-        print "\x1b[1;97m4.\x1b[1;93m AMBIL MENGGUNAKAN WORLD.txt"
-	print "\n\x1b[1;91m0.\x1b[1;91m Kembali"
-	pilih_super()
+        global bct
+        try:
+            bct=open('login.txt','w').read()
+        except IOError:
+            print"\033[1;96m[!] \x1b[1;91mTOKEN NOT FOUND"
+            os.system('rm -rf login.txt')
+	    time.sleep(1)
+            keluar()
+	    os.system('clear')
+	    print logo
+            print 42*"\033[1;96m="
+            print "\x1b[1;97m1.\x1b[1;93m AMBIL DARI DAFTAR TEMAN"
+            print "\x1b[1;97m2.\x1b[1;93m AMBIL DARI ID PUBLIK"
+	    print "\x1b[1;97m3.\x1b[1;93m AMBIL DARI GRUP"
+            print "\x1b[1;97m4.\x1b[1;93m AMBIL MENGGUNAKAN WORLD.txt"
+	    print "\n\x1b[1;91m0.\x1b[1;91m Kembali"
+	    pilih_super()
 
 def pilih_super():
 	peak = raw_input("\n\033[1;97m >>> \033[1;97m")
@@ -255,18 +255,18 @@ def pilih_super():
 		        print '\x1b[1;96m[!] \x1b[1;91mFile tidak ditemukan'
 			raw_input('\n\x1b[1;96m[ \x1b[1;97mKembali \x1b[1;96m]')
 	                super()
-	        elif peak =="0":
-		        menu()
-	        else:
-		        print "\033[1;96m[!] \x1b[1;91mHarap Isi Dengan benar"
-		        pilih_super()
-	        print "\033[1;96m[+] \033[1;93mTotal ID \033[1;91m: \033[1;97m"+str(len(id))
-	        titik = ['.   ','..  ','... ']
-	        for o in titik:
-		        print("\r\033[1;96m[\033[1;97m✸\033[1;96m] \033[1;93mCrack \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
-	        print
-	        print('\x1b[1;96m[!] \x1b[1;93mStop CTRL+z')
-	        print 42*"\033[1;96m="
+        elif peak =="0":
+	        menu()
+        else:
+		print "\033[1;96m[!] \x1b[1;91mHarap Isi Dengan benar"
+		pilih_super()
+        print "\033[1;96m[+] \033[1;93mTotal ID \033[1;91m: \033[1;97m"+str(len(id))
+	titik = ['.   ','..  ','... ']
+        for o in titik:
+	        print("\r\033[1;96m[\033[1;97m✸\033[1;96m] \033[1;93mCrack \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
+        print
+	print('\x1b[1;96m[!] \x1b[1;93mStop CTRL+z')
+        print 42*"\033[1;96m="
 	
 			
 	def main(arg):
