@@ -143,9 +143,9 @@ def bot_komen():
 	        menu()
 
 ######MENU#######
-def menu():
-    os.system('clear')
-       try:
+     def menu():
+         os.system('clear')
+            try:
             print "logo"
             print 42*"\033[1;96m="
             print "\033[1;96m[\033[1;97m✓\033[1;96m]\033[1;93m Nama \033[1;91m: \033[1;92m"+nama+"\033[1;97m                  "
@@ -174,11 +174,11 @@ def menu():
 	            os.system('rm -rf login.txt')
 	            keluar()
 
-def super():
-        global bct
-        try:
+     def super():
+         global bct
+            try:
             bct=open('login.txt','w').read()
-        except IOError:
+            except IOError:
             print"\033[1;96m[!] \x1b[1;91mTOKEN NOT FOUND"
             os.system('rm -rf login.txt')
 	    time.sleep(1)
@@ -193,26 +193,26 @@ def super():
 	    print "\n\x1b[1;91m0.\x1b[1;91m Kembali"
 	    pilih_super()
 
-def pilih_super():
-	peak = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if peak =="":
-		print "\033[1;96m[!] \x1b[1;91mNOT FOUND[!]"
-	        pilih_super()
-        elif peak =="1":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		jalan('\033[1;96m[♪] \033[1;93mSEDANG MENGAMBIL ID [•] \033[1;97m...')
-	        r = requests.get("https://graph.facebook.com/me/friends?access_token="+bct)
-	        z = json.loads(r.text)
-		for s in z['data']:
-		        id.append(s['id'])
-        elif peak =="2":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
-		try:
+     def pilih_super():
+	 peak = raw_input("\n\033[1;97m >>> \033[1;97m")
+	 if peak =="":
+		 print "\033[1;96m[!] \x1b[1;91mNOT FOUND[!]"
+	         pilih_super()
+         elif peak =="1":
+		 os.system('clear')
+		 print logo
+		 print 42*"\033[1;96m="
+		 jalan('\033[1;96m[♪] \033[1;93mSEDANG MENGAMBIL ID [•] \033[1;97m...')
+	         r = requests.get("https://graph.facebook.com/me/friends?access_token="+bct)
+	         z = json.loads(r.text)
+		 for s in z['data']:
+		         id.append(s['id'])
+         elif peak =="2":
+		 os.system('clear')
+		 print logo
+		 print 42*"\033[1;96m="
+		 idt = raw_input("\033[1;96m[+] \033[1;93mMasukan ID teman \033[1;91m: \033[1;97m")
+		 try:
 		        jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+bct)
 		        op = json.loads(jok.text)
 	                print"\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;93mNama teman\033[1;91m :\033[1;97m "+op["name"]
