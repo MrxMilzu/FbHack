@@ -157,7 +157,7 @@ def menu():
             print "\x1b[1;93m4.\x1b[1;93m Yahoo clone               "
             print "\n\x1b[1;91m0.\x1b[1;91m Logout            "
             tolol = raw_input("\n\033[1;97m >>> \033[1;97m")
-       if tolol =="":
+            if tolol =="":
 	    print "\033[1;96m[!] \x1b[1;91mMASUKAN DENGAN BETUL[•] "
 	            menu()
 	    elif tolol =="1":
