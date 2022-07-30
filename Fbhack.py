@@ -143,7 +143,7 @@ def bot_komen():
 	        menu()
 
 ######MENU#######
-def menu():
+    def menu():
     os.system('clear')
         try:
            print "logo"
